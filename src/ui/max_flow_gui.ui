@@ -1,108 +1,167 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
-  <class>MainWindow</class>
-  <widget class="QMainWindow" name="MainWindow">
-    <property name="geometry">
-      <rect>
-        <x>0</x>
-        <y>0</y>
-        <width>600</width>
-        <height>400</height>
-      </rect>
-    </property>
-    <widget class="QWidget" name="centralwidget">
-      <layout class="QVBoxLayout" name="verticalLayout">
-        <item>
-          <widget class="QTableWidget" name="table_edges">
-            <column>
-              <property name="text">
-                <string>De</string>
-              </property>
-            </column>
-            <column>
-              <property name="text">
-                <string>Vers</string>
-              </property>
-            </column>
-            <column>
-              <property name="text">
-                <string>Capacité</string>
-              </property>
-            </column>
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>800</width>
+    <height>600</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Calculateur de Flot Maximal</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QVBoxLayout" name="verticalLayout">
+    <item>
+     <widget class="QGroupBox" name="groupBox">
+      <property name="title">
+       <string>Définition du Graphe</string>
+      </property>
+      <layout class="QVBoxLayout" name="verticalLayout_2">
+       <item>
+        <layout class="QHBoxLayout" name="horizontalLayout">
+         <item>
+          <widget class="QPushButton" name="btn_add_row">
+           <property name="text">
+            <string>Ajouter un arc</string>
+           </property>
           </widget>
-        </item>
-        <item>
-          <layout class="QHBoxLayout">
-            <item>
-              <widget class="QPushButton" name="btn_add_row">
-                <property name="text">
-                  <string>Ajouter un arc</string>
-                </property>
-              </widget>
-            </item>
-            <item>
-              <widget class="QPushButton" name="btn_remove_row">
-                <property name="text">
-                  <string>Supprimer l'arc</string>
-                </property>
-              </widget>
-            </item>
-          </layout>
-        </item>
-        <item>
-          <layout class="QHBoxLayout">
-            <item>
-              <widget class="QLabel">
-                <property name="text">
-                  <string>Source:</string>
-                </property>
-              </widget>
-            </item>
-            <item>
-              <widget class="QComboBox" name="cb_source"/>
-            </item>
-            <item>
-              <widget class="QLabel">
-                <property name="text">
-                  <string>Puits:</string>
-                </property>
-              </widget>
-            </item>
-            <item>
-              <widget class="QComboBox" name="cb_sink"/>
-            </item>
-          </layout>
-        </item>
-        <item>
-          <widget class="QPushButton" name="btn_calculate">
-            <property name="text">
-              <string>Calculer le flot maximal</string>
-            </property>
+         </item>
+         <item>
+          <widget class="QPushButton" name="btn_remove_row">
+           <property name="text">
+            <string>Supprimer l'arc </string>
+           </property>
           </widget>
-        </item>
-        <item>
-          <widget class="QLabel" name="lbl_result"/>
-        </item>
-        <item>
-          <widget class="QTableWidget" name="table_result">
-            <column>
-              <property name="text">
-                <string>De</string>
-              </property>
-            </column>
-            <column>
-              <property name="text">
-                <string>Vers</string>
-              </property>
-            </column>
-            <column>
-              <property name="text">
-                <string>Flux</string>
-              </property>
-            </column>
-          </widget>
-        </item>
+         </item>
+        </layout>
+       </item>
+       <item>
+        <widget class="QTableWidget" name="table_edges">
+         <property name="columnCount">
+          <number>3</number>
+         </property>
+         <column>
+          <property name="text">
+           <string>Source</string>
+          </property>
+         </column>
+         <column>
+          <property name="text">
+           <string>Destination</string>
+          </property>
+         </column>
+         <column>
+          <property name="text">
+           <string>Capacité</string>
+          </property>
+         </column>
+        </widget>
+       </item>
       </layout>
-    </widget>
+     </widget>
+    </item>
+    <item>
+     <widget class="QGroupBox" name="groupBox_2">
+      <property name="title">
+       <string>Paramètres</string>
+      </property>
+      <layout class="QFormLayout" name="formLayout">
+       <item row="0" column="0">
+        <widget class="QLabel" name="label">
+         <property name="text">
+          <string>Source:</string>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="1">
+        <widget class="QComboBox" name="cb_source"/>
+       </item>
+       <item row="1" column="0">
+        <widget class="QLabel" name="label_2">
+         <property name="text">
+          <string>Puits:</string>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="1">
+        <widget class="QComboBox" name="cb_sink"/>
+       </item>
+      </layout>
+     </widget>
+    </item>
+    <item>
+     <widget class="QPushButton" name="btn_calculate">
+      <property name="text">
+       <string>Calculer le flot maximal</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QGroupBox" name="groupBox_3">
+      <property name="title">
+       <string>Résultats</string>
+      </property>
+      <layout class="QVBoxLayout" name="verticalLayout_3">
+       <item>
+        <widget class="QLabel" name="lbl_result">
+         <property name="font">
+          <font>
+           <pointsize>12</pointsize>
+           <weight>75</weight>
+           <bold>true</bold>
+          </font>
+         </property>
+         <property name="text">
+          <string>Flot Maximal: -</string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignCenter</set>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QTableWidget" name="table_result">
+         <property name="columnCount">
+          <number>3</number>
+         </property>
+         <column>
+          <property name="text">
+           <string>Source</string>
+          </property>
+         </column>
+         <column>
+          <property name="text">
+           <string>Destination</string>
+          </property>
+         </column>
+         <column>
+          <property name="text">
+           <string>Flot</string>
+          </property>
+         </column>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </item>
+   </layout>
   </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>800</width>
+     <height>21</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+ </widget>
+ <resources/>
+ <connections/>
 </ui>

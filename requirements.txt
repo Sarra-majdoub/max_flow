@@ -1,4 +1,4 @@
 gurobipy==10.0.2
-PyQt5==5.15.9
-PyQt5-Qt5==5.15.2
-PyQt5-sip==12.12.1
+PyQt5>=5.15.0
+networkx>=2.5
+matplotlib>=3.3.0
