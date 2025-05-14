@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+  <class>MainWindow</class>
+  <widget class="QMainWindow" name="MainWindow">
+    <property name="geometry">
+      <rect>
+        <x>0</x>
+        <y>0</y>
+        <width>600</width>
+        <height>400</height>
+      </rect>
+    </property>
+    <widget class="QWidget" name="centralwidget">
+      <layout class="QVBoxLayout" name="verticalLayout">
+        <item>
+          <widget class="QTableWidget" name="table_edges">
+            <column>
+              <property name="text">
+                <string>De</string>
+              </property>
+            </column>
+            <column>
+              <property name="text">
+                <string>Vers</string>
+              </property>
+            </column>
+            <column>
+              <property name="text">
+                <string>Capacité</string>
+              </property>
+            </column>
+          </widget>
+        </item>
+        <item>
+          <layout class="QHBoxLayout">
+            <item>
+              <widget class="QPushButton" name="btn_add_row">
+                <property name="text">
+                  <string>Ajouter un arc</string>
+                </property>
+              </widget>
+            </item>
+            <item>
+              <widget class="QPushButton" name="btn_remove_row">
+                <property name="text">
+                  <string>Supprimer l'arc</string>
+                </property>
+              </widget>
+            </item>
+          </layout>
+        </item>
+        <item>
+          <layout class="QHBoxLayout">
+            <item>
+              <widget class="QLabel">
+                <property name="text">
+                  <string>Source:</string>
+                </property>
+              </widget>
+            </item>
+            <item>
+              <widget class="QComboBox" name="cb_source"/>
+            </item>
+            <item>
+              <widget class="QLabel">
+                <property name="text">
+                  <string>Puits:</string>
+                </property>
+              </widget>
+            </item>
+            <item>
+              <widget class="QComboBox" name="cb_sink"/>
+            </item>
+          </layout>
+        </item>
+        <item>
+          <widget class="QPushButton" name="btn_calculate">
+            <property name="text">
+              <string>Calculer le flot maximal</string>
+            </property>
+          </widget>
+        </item>
+        <item>
+          <widget class="QLabel" name="lbl_result"/>
+        </item>
+        <item>
+          <widget class="QTableWidget" name="table_result">
+            <column>
+              <property name="text">
+                <string>De</string>
+              </property>
+            </column>
+            <column>
+              <property name="text">
+                <string>Vers</string>
+              </property>
+            </column>
+            <column>
+              <property name="text">
+                <string>Flux</string>
+              </property>
+            </column>
+          </widget>
+        </item>
+      </layout>
+    </widget>
+  </widget>
+</ui>
